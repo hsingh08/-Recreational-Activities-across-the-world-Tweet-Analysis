@@ -30,6 +30,6 @@ https://github.com/hsingh08/-Recreational-Activities-across-the-world-Tweet-Anal
 
 
 
-Demo-Presented By our project Lead-Rashmi Tripathi
+Demo-Presented By our project Leader-Rashmi Tripathi
 
 https://www.youtube.com/watch?v=pidOWRspl04
