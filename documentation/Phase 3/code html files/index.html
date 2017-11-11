@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Tweets Analysis using Spark</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">	
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="show.different.graphs.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script type="text/javascript"  src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js?key=AIzaSyDN3QNve8tvEtW4XxTqhfzDo-1E8fnCD8M"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN3QNve8tvEtW4XxTqhfzDo-1E8fnCD8M"></script>
+<script type="text/javascript"  src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript"  src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script  type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+<script type="text/javascript"  src="http://d3js.org/d3.v3.min.js"></script>
+<script  type="text/javascript" src="d3.layout.cloud.js"></script>
+<script  type="text/javascript" src="d3pie.min.js"></script>
+<script type="text/javascript">
+      google.charts.load('upcoming', {'packages':['geochart']});
+     // google.charts.setOnLoadCallback(drawRegionsMap);
+ </script>     
+</head>
+<body >
+<div id="banner"></div>
+<div id="bodybutton" class="beforeClick">
+    <br><br> 
+    <div> Click on below to visualize trends analyzed using spark </div>
+      
+    <!--  We can include action te execute respective servlet exceution. Like we are doing for risky activities
+          Rest all we are doing to show results instantly
+          
+     <form class="col-md-2 centerCol" action="querycountry" class="cell" target="_blank"><input type="submit" value="Top Countries except USA" class="btn btn-circle" style="background: rgb(29, 187, 234);"></input></form>
+    <form class="col-md-2 centerCol" action="querytophashtags" class="cell" target="_blank"><input type="submit" value="Top HashTags" class="btn btn-circle"style="background-color: rgb(38, 128, 184);"></input></form>
+    <form class="col-md-2 centerCol" action="queryagegroup" class="cell" target="_blank"><input type="submit" value="By Age Group" class="btn btn-circle"style="background-color: rgb(228, 80, 19);"></input></form>        
+    <form class="col-md-2 centerCol" action="querypopularwords" target="_blank"><input type="submit" value="Top Activities" class="btn btn-circle" style="background: rgb(29, 187, 234); opacity:1;"></input></form>
+    <form class="col-md-2 centerCol" action="queryRecreationMode" target="_blank"><input type="submit" value="By Mode" class="btn btn-circle"style="background-color: rgb(38, 128, 184); opacity:1;"></input></form>
+    <input type="submit" onclick="showMode()" value="By Mode" class="btn btn-circle"style="background-color: rgb(38, 128, 184); opacity:1;"></input></form>
+    <form action="queryRiskyActivities" target="_self"><input type="submit" value="Do You Risk" class="btn btn-circle"style="background-color: rgb(228, 80, 19); opacity:1;"></input></form>
+     
+     -->
+     <div class="row centerRow">     
+     <form class="col-md-2 centerCol" ><input onclick="showTopActivities()" value="Popular Words" class="btn btn-circle" style="background: rgb(29, 187, 234); opacity:1;"></input></form>
+     <form class="col-md-2 centerCol" ><input onclick="showTopCountries()" value="By Countries" class="btn btn-circle" style="background: rgb(29, 187, 234);"></input></form>
+     <form class="col-md-2 centerCol" ><input onclick="showAgeGroup()" value="By Age Group" class="btn btn-circle"style="background-color: rgb(228, 80, 19);"></input></form>        
+     <form class="col-md-2 centerCol" ><input onclick="showHashTags()" value="Top HashTags" class="btn btn-circle"style="background-color: rgb(38, 128, 184);"></input></form>
+     <form class="col-md-2 centerCol" action="queryRiskyActivities" target="_self"><input type="submit" value="Risky vs non-Risky" class="btn btn-circle"style="background-color: rgb(228, 80, 19); opacity:1;"></input></form>
+     </div>
+</div>  
+<div id="graph" class=""></div>
+
+</body>
+</html>
